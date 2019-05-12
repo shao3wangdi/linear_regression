@@ -3,13 +3,6 @@
     clear;
     close all;
 
-    M=importdata('COV-label.mat');    
-    M=normalize(M, 2);
-    N=importdata('COV-data.mat');
-    x_train=M(1:500000,:)';
-    y_train=N(1:500000,:)';
-    x_test=M(500000:end,:)';
-    y_test=N(500000:end,:)';
     problem = logistic_regression(x_train, y_train, x_test, y_test, 0.001); 
     options.step_init = 0.1; 
     options.max_iter=400;
